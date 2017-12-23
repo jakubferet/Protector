@@ -1,0 +1,33 @@
+Arduino UNO 300,-	https://arduino-shop.cz/arduino/1258-klon-arduino-uno-r3-atmega328p-ch340g-usb-typ-b-kabel-1459967190.html
+Nepájivé pole 100,-	https://arduino-shop.cz/arduino-kabelaz-propoje-rozsireni/1226-nepajive-pole-400-kontaktu-1458404875.html
+Bzuèák 10,-		https://arduino-shop.cz/arduino/1251-bzucak-5v-23-khz-1459619867.html
+Ultrazvukový sensor 100,-https://arduino-shop.cz/arduino/1735-meric-vzdalenosti-ultrazvukovy-5pin-hy-srf05-pro-arduino-1502180852.html
+LED 10,- 		https://arduino-shop.cz/arduino/1032-led-dioda-zelena-5mm-1434544279.html https://arduino-shop.cz/arduino/1036-led-dioda-rgb-5mm-1434544602.html
+LCD 200,-		https://arduino-shop.cz/arduino/1570-iic-i2c-display-lcd-1602-16x2-znaku-lcd-modul-modry-1487765909.html
+
+Klávesnice 100,-	https://arduino-shop.cz/arduino-vstupni-periferie/824-arduino-klavesnice-membranova-4x4-1500635994.html
+Wifi 200,-		https://arduino-shop.cz/arduino/911-internet-veci-je-tady-tcp-ip-wifi-esp8266-1420990568.html
+Klip na baterii 10,-	https://arduino-shop.cz/arduino/1354-klip-na-9v-baterii-1467100846.html
+Napájecí modul 50,- 	https://arduino-shop.cz/arduino/1004-napajeci-modul-nepajiveho-pole-1427822090.html
+I2C 50,- 		https://arduino-shop.cz/arduino/1071-lcd-seriove-rozhrani-iic-i2c-twi-sp-1602-1438010911.html
+Kabely 100,-		https://arduino-shop.cz/180-arduino-kabelaz-propoje-rozsireni/?pg=3
+
+https://arduino-shop.cz/arduino/1527-9v-baterie-alkalicka-westinghouse-6lr61-1486496666.html
+https://arduino-shop.cz/arduino/1532-9v-baterie-nabijeci-nimh-200mah-westinghouse-premium-8-4-v-1486574159.html
+
+https://www.aliexpress.com/item/Ultimate-Starter-Kit-including-Ultrasonic-Sensor-UNO-R3-LCD1602-Screen-for-Arduino-Mega2560-UNO-Nano-with/32773337132.html?spm=2114.search0104.3.81.NjCdbl&ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10344_10342_10343_10340_10341_10304_10307_10137_10060_10302_10155_10154_10056_10055_10054_5470020_10059_100031_10099_5460020_10338_10339_10103_10102_440_10052_10053_10142_10107_10050_10051_5380020_10171_10326_10084_10083_10080_10082_10081_10110_10111_10112_10113_10114_143_10312_10313_10314_10078_10079_10073,searchweb201603_15,ppcSwitch_5&btsid=15709216-3399-4798-8a55-2dc2679bfc4b&algo_expid=44652d92-b757-463e-b57f-9c625901ef44-13&algo_pvid=44652d92-b757-463e-b57f-9c625901ef44
+
+https://www.aliexpress.com/item/Lua-Nodemcu-WIFI-Network-Development-Board-Based-ESP8266-HIGH-QUALITY/32653616830.html?spm=a2g0s.9042311.0.0.ctppYj
+https://www.aliexpress.com/item/1pcs-Quality-mini-bread-board-breadboard-8-5CM-x-5-5CM-400-holes/32803112223.html?spm=a2g0s.9042311.0.0.ctppYj
+https://www.aliexpress.com/item/Box-Holder-For-2-x-AA-Black-With-Wire-Leads-Plastic-Battery-Storage-Case-LJJ1201/32776679900.html?spm=a2g0s.9042311.0.0.ctppYj
+https://www.aliexpress.com/item/HL-2016-Hot-New-Box-Holder-For-3-x-AA-Black-With-Wire-Leads-Plastic-Battery/32741893688.html?spm=a2g0s.9042311.0.0.ctppYj
+https://www.aliexpress.com/item/2A-DC-DC-Step-Up-Power-Apply-Module-Booster-Power-Module/32465866240.html?spm=a2g0s.9042311.0.0.ctppYj
+https://www.aliexpress.com/item/AMS1117-4-5-7V-turn-3-3V-DC-DC-Step-down-Power-Supply-Module-For-Arduino/32474223187.html?spm=a2g0s.9042311.0.0.ctppYj
+https://www.aliexpress.com/item/1-23V-30V-DC-DC-Buck-Converter-Step-Down-Module-LM2596-Power-Supply-Output/32513687222.html?spm=a2g0s.9042311.0.0.ctppYj
+https://www.aliexpress.com/item/5pcs-5V-To-3-3V-DC-DC-Step-Down-Power-Supply-Buck-Module-AMS1117-800MA/32827541268.html?spm=a2g0s.9042311.0.0.5W5qcY
+https://www.aliexpress.com/item/IIC-I2C-Logic-Level-Converter-Bi-Directional-Module-5V-to-3-3V-For-Arduino/32589088559.html?spm=a2g0s.9042311.0.0.ctppYj
+https://www.aliexpress.com/item/Free-shipping-3-3V-5V-TXS0108E-8-Channel-Logic-Level-Converter-Convert-TTL-Bi-directional-Mutual/32500600891.html?spm=a2g0s.9042311.0.0.ctppYj
+https://www.aliexpress.com/item/CE024-DC-DC-Boost-Step-UP-Converter-0-8-3-3V-to-3-3V-Voltage-Regulator/32833984559.html?spm=a2g0s.9042311.0.0.ctppYj
+https://www.aliexpress.com/item/Micro-USB-Sync-Data-Charge-A-Male-to-Micro-B-Cable-For-Android-Mobile-Phones-Samsung/32525077273.html?spm=a2g0s.9042311.0.0.ctppYj
+
+https://www.aliexpress.com/item/Smart-Electronics-5V-Micro-USB-1A-18650-Lithium-Battery-Charging-Board-With-Protection-Charger-Module-for/32615930404.html?spm=2114.search0104.3.9.o1Kktn&ws_ab_test=searchweb0_0,searchweb201602_5_10152_10065_10151_10068_10344_10345_10342_10343_10340_10341_10540_10304_10307_10060_10302_10155_10154_10056_10055_10054_10539_10538_10537_10059_10536_10534_10533_100031_10099_10338_10103_10102_5590020_10052_10053_10107_10050_10142_10051_10171_10084_10083_5370020_10080_10082_10081_5610020_10110_10111_10112_10113_10114_10312_10313_10314_10078_10079_10073,searchweb201603_14,ppcSwitch_5&btsid=0541f54e-a168-4211-a37f-3ed9b0c5d47a&algo_expid=82d09a64-a0e8-4088-933a-bd03577aa6ae-1&algo_pvid=82d09a64-a0e8-4088-933a-bd03577aa6ae
