@@ -10,4 +10,5 @@ void setup() {
   //192.168.4.1
   WiFiManager wifiManager;
   wifiManager.autoConnect("AP-NAME", "AP-PASSWORD");
+  wifiManager.setConfigPortalTimeout(120);
 }
