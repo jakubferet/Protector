@@ -1,5 +1,7 @@
 #include <ESP8266WiFi.h>
 #include <WiFiManager.h>
+#include <DNSServer.h>      
+#include <ESP8266WebServer.h>
 #include <ArduinoJson.h>
 #include <Keypad_I2C.h>
 #include <Keypad.h>
