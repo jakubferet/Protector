@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 //libraries
 #include <ESP8266WiFi.h> //ESP8266 WiFi connection
 #include <WiFiManager.h> //ESP8266 WiFi manager - automatic connection
@@ -9,6 +10,17 @@
 #include <Keypad.h> //needed for I2C keypad
 #include <Wire.h> //needed for display and keypad
 #include <LiquidCrystal_I2C.h> //I2C display
+=======
+#include <ESP8266WiFi.h>
+#include <WiFiManager.h>
+#include <DNSServer.h>      
+#include <ESP8266WebServer.h>
+#include <ArduinoJson.h>
+#include <Keypad_I2C.h>
+#include <Keypad.h>
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+>>>>>>> 2190025cc1b9b5205430fcbec9c4a07006db10ae
 #define buzzer 15
 #define redLed 13
 #define trigPin 14
