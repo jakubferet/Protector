@@ -18,12 +18,16 @@
 #include <Keypad.h>
 #include <Wire.h>
 #include <LiquidCrystal_I2C.h>
+//pins declaration
 #define buzzer 15
 #define redLed 13
 #define trigPin 14
 #define echoPin 12
+//url of the web server
 const char* host = "protector.sspu-opava.eu";
+//url for the get request
 String getPath = "/json/json";
+//url for the post request
 String postPath = "/values/values";
 long duration;
 int distance;
