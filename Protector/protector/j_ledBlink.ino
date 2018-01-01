@@ -1,3 +1,4 @@
+//LED blinking function
 void ledBlink() {
   ledCurrent = millis();
   if (ledCurrent - ledPrevious >= ledInterval) {

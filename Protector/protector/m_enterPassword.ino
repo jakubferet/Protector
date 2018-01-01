@@ -1,22 +1,30 @@
+//password input and validation function 
 void enterPassword() {
   int attempt = 3;
-  int k = 9;
+  k = 9;
+  //read the current password from the EEPROM
+  eepromRead();
   tempPass = "";
   activated = true;
   lcd.setCursor(0, 1);
   lcd.print("Password:");
+  //keep repeating while activated is true
   while (activated) {
+    //keep repeating until warning or countdown is 0
     while (warning != 0 - 1 || countdown != 0 - 1) {
       keypressed = customKeypad.getKey();
+      //if B was pressed, call the changePassword() function
       if(keypressed == 'B' && change == true){
         tone(buzzer, 600, 100);
         changePassword();  
       }
+      //every few seconds call the getValues() function
       valuesCurrent = millis();
       if (valuesCurrent - valuesPrevious >= valuesInterval) {
         valuesPrevious = valuesCurrent;
         getValues();
       }
+      //if activate is true and alarm isn't already activated, call the activateAlarm() function
       if (activate == "true" && active == true && alarm == "false") {
           deactivate = false;
           activated = false;
@@ -24,11 +32,13 @@ void enterPassword() {
           text = 0;
           activateAlarm();
       }
+      //id activate is false, call the deactivateAlarm() function
       else if(activate == "false" && deactive == true){
         alarm = "false";
         postValues();
         deactivateAlarm(); 
       }
+      //if deactivate is true, keep beeping, blinking and decreasing the countdown and the warning variable every second
       if (deactivate == true) {
         check = false;
         currentMillis = millis();
@@ -51,19 +61,11 @@ void enterPassword() {
           }
         }
       }
+      //if any key was pressed, call the temporaryPassword() function
       if (keypressed != 'N') {
-        if (keypressed == '0' || keypressed == '1' || keypressed == '2' || keypressed == '3' ||
-            keypressed == '4' || keypressed == '5' || keypressed == '6' || keypressed == '7' ||
-            keypressed == '8' || keypressed == '9' ) {
-          tempPass += keypressed;
-          lcd.setCursor(k, 1);
-          lcd.print("*");
-          if (alarm == "false") {
-            tone(buzzer, 500, 100);
-          }
-          k++;
-        }
+        temporaryPassword();
       }
+      //if more than six keys were pressed or if C was pressed, reset the temporary password
       if (k > 15 || keypressed == 'C') {
         if (alarm == "false") {
           tone(buzzer, 600, 100);
@@ -90,10 +92,12 @@ void enterPassword() {
         lcd.setCursor(0, 1);
         lcd.print("Password:");
       }
+      //if * was pressed, check if the temporary password equals the current valid password
       if (keypressed == '*') {
         if (alarm == "false") {
           tone(buzzer, 600, 100);
         }
+        //if the temporary password equals the current valid password
         if (tempPass == pass) {
           if(activate == "true"){
             activate = "false";
@@ -102,18 +106,22 @@ void enterPassword() {
             activate = "true";
           }
           alarm = "false";
+          //call the postValues() function
           postValues();
           activated = false;
           deactivate = false;
           message = 0;
           text = 0;
-          if (activeAlarm == true) {
+          //if the alarm isn't already activated, call the activateAlarm() function
+          if (activeAlarm == false) {
             activateAlarm();
           }
+          //if the alarm already is activated, call the deactivateAlarm() function
           else {
             deactivateAlarm();
           }
         }
+        //if the temporary password doesn't equal the current valid password, display error, reset the temporary password and decrease the number of remaining attempts
         else if (tempPass != pass) {
           k = 9;
           tempPass = "";
@@ -126,6 +134,7 @@ void enterPassword() {
             lcd.print("ATTEMPTS:");
             lcd.setCursor(10, 1);
             lcd.print(attempt);
+            //if there are no attempts left, call the alarmActivated() function
             if (attempt == 0) {
               alarmActivated();
             }
@@ -153,13 +162,15 @@ void enterPassword() {
         }
       }
       yield();
-    }
+    }//end of while
+    //when the countdown is 0, call the alarmCheck() function
     if (back == true) {
       alarmCheck();
     }
+    //when the warning is 0, call the alarmActivated() function
     else {
       alarmActivated();
     }
     yield();
-  }
+  }//end of while activated
 }

@@ -1,10 +1,14 @@
-#include <ESP8266WiFi.h>
-#include <WiFiManager.h>
-#include <ArduinoJson.h>
-#include <Keypad_I2C.h>
-#include <Keypad.h>
-#include <Wire.h>
-#include <LiquidCrystal_I2C.h>
+//libraries
+#include <ESP8266WiFi.h> //ESP8266 WiFi connection
+#include <WiFiManager.h> //ESP8266 WiFi manager - automatic connection
+#include <DNSServer.h> //needed for WiFi manager    
+#include <ESP8266WebServer.h> //needed for WiFi manager
+#include <EEPROM.h> //storing data in EEPROM
+#include <ArduinoJson.h> //json encoding and decoding
+#include <Keypad_I2C.h> //I2C keypad
+#include <Keypad.h> //needed for I2C keypad
+#include <Wire.h> //needed for display and keypad
+#include <LiquidCrystal_I2C.h> //I2C display
 #define buzzer 15
 #define redLed 13
 #define trigPin 14
@@ -16,7 +20,7 @@ long duration;
 int distance;
 int initialDistance;
 int currentDistance;
-int i;
+int k;
 int countdown = 10;
 int warning = 10;
 int count = 10;
@@ -27,12 +31,16 @@ boolean active = true;
 boolean deactive = false;
 int message = 0;
 int text = 0;
-String pass = "1234";
+int address = 0;
+String pass;
+int vel = 0;
 String tempPass;
+String changePass;
 boolean activated;
-boolean activeAlarm = false;
+boolean activeAlarm = true;
 boolean passChangeMode = false;
 boolean passChanged = false;
+boolean passAgain = false;
 boolean change = true;
 boolean danger = false;
 boolean deactivate = false;
@@ -52,6 +60,7 @@ const long interval = 1000;
 unsigned long valuesPrevious = 0;
 unsigned long valuesCurrent;
 const long valuesInterval = 10000;
+//keypad declaration
 char keypressed;
 const byte ROWS = 4; 
 const byte COLS = 4; 
@@ -61,7 +70,8 @@ char hexaKeys[ROWS][COLS] = {
   {'7', '8', '9', 'C'},
   {'*', '0', '#', 'D'}
 };
-byte rowPins[ROWS] = {0, 1, 2, 3}; //connect to the row pinouts of the keypad
-byte colPins[COLS] = {4, 5, 6, 7}; //connect to the column pinouts of the keypad
+byte rowPins[ROWS] = {0, 1, 2, 3};
+byte colPins[COLS] = {4, 5, 6, 7};
 Keypad_I2C customKeypad( makeKeymap(hexaKeys), rowPins, colPins, ROWS, COLS, 0x21);
+//LCD display inicialization
 LiquidCrystal_I2C lcd(0x27, 16, 2);

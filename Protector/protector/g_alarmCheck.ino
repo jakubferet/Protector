@@ -1,3 +1,5 @@
+//Function uses the getDistance() function to detect changes in the measured distance.
+//If they occur, warning message is printed and enterPassword() function is called.
 void alarmCheck() {
   lcd.clear();
   lcd.setCursor(0, 0);
@@ -8,7 +10,9 @@ void alarmCheck() {
   back = false;
   check = true;
   change = false;
+  //keep measuring the distance
   while (danger == false) {
+    //every few seconds call the getValues() function
     valuesCurrent = millis();
     if (valuesCurrent - valuesPrevious >= valuesInterval) {
       valuesPrevious = valuesCurrent;
@@ -18,11 +22,13 @@ void alarmCheck() {
       deactivateAlarm();  
     }
     currentDistance = getDistance() + 30;
+    //check if the measured distance changed
     if (currentDistance < initialDistance) {
       danger = true;
       check = false;
       warning = warn;
       countdown = 0 - 1;
+      //display warning message and call function enterPassword()
       while (warning != 0 - 1) {
         if (message == 0) {
           lcd.clear();
@@ -38,9 +44,9 @@ void alarmCheck() {
         deactivate = true;
         enterPassword();
         yield();
-      }
+      }//end of while
       alarmActivated();
     }
     yield();
-  }
+  }//end of while
 }
