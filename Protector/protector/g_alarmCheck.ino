@@ -21,7 +21,7 @@ void alarmCheck() {
     if(activate == "false"){
       deactivateAlarm();  
     }
-    currentDistance = getDistance() + 30;
+    currentDistance = getDistance() + 20;
     //check if the measured distance changed
     if (currentDistance < initialDistance) {
       danger = true;
