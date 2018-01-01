@@ -29,6 +29,7 @@ const char* host = "protector.sspu-opava.eu";
 String getPath = "/json/json";
 //url for the post request
 String postPath = "/values/values";
+//variables declaration
 long duration;
 int distance;
 int initialDistance;
