@@ -21,10 +21,7 @@ void activateAlarm() {
       lcd.setCursor(5, 0);
       lcd.print("CANCEL");
       warning = 0 - 1;
-      activateMessage = false;
-      warningMessage = false;
-      alarmMessage = false;
-      cancelMessage = true;
+      printMessage = "cancel";
       back = true;
       deactivate = true;
       enterPassword();

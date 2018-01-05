@@ -25,10 +25,7 @@ void alarmActivated() {
   tone(buzzer, 1000);
   //turn on the LED
   digitalWrite(redLed, HIGH);
-  activateMessage = false;
-  warningMessage = false;
-  cancelMessage = false;
-  alarmMessage = true;
+  printMessage = "alarm";
   deactive = true;
   //call the enterPassword() function so that the user can deactivate the alarm
   enterPassword();

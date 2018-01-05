@@ -9,15 +9,9 @@
 #include <Keypad.h> //needed for I2C keypad
 #include <Wire.h> //needed for display and keypad
 #include <LiquidCrystal_I2C.h> //I2C display
-#include <ESP8266WiFi.h>
-#include <WiFiManager.h>
-#include <DNSServer.h>      
-#include <ESP8266WebServer.h>
-#include <ArduinoJson.h>
-#include <Keypad_I2C.h>
-#include <Keypad.h>
-#include <Wire.h>
-#include <LiquidCrystal_I2C.h>
+#include <ArduinoOTA.h> //over the air transfer
+#include <ESP8266mDNS.h> //needed for Arduino OTA
+#include <WiFiUdp.h> //needed for Arduino OTA
 //pins declaration
 #define buzzer 15
 #define redLed 13
@@ -60,10 +54,7 @@ boolean danger = false;
 boolean deactivate = false;
 boolean back = false;
 boolean check = true;
-boolean activateMessage = false;
-boolean warningMessage = false;
-boolean alarmMessage = false;
-boolean cancelMessage = false;
+String printMessage;
 int ledState = LOW;
 unsigned long ledPrevious = 0;
 unsigned long ledCurrent;
@@ -74,6 +65,12 @@ const long interval = 1000;
 unsigned long valuesPrevious = 0;
 unsigned long valuesCurrent;
 const long valuesInterval = 10000;
+boolean ota = true;
+unsigned long otaPrevious = 0;
+unsigned long otaCurrent;
+const long otaInterval = 1000;
+int otaTransfer = 0;
+int otaTime = 15;
 //keypad declaration
 char keypressed;
 const byte ROWS = 4; 

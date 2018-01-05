@@ -24,6 +24,8 @@ https://www.abeautifulsite.net/passing-data-from-php-to-javascript
 https://github.com/bazo/nette-form-controls/blob/master/Bazo/Forms/Controls/Slider.php
 https://stackoverflow.com/questions/857670/how-to-connect-to-sql-server-database-from-javascript-in-the-browser
 
+https://randomnerdtutorials.com/esp8266-ota-updates-with-arduino-ide-over-the-air/
+
 https://circuits4you.com/2016/12/16/esp8266-internal-eeprom-arduino/
 
 https://forum.nette.org/cs/22412-rest-api-pomoci-drahak-restful-pristup-ke-get-a-post-payloadu

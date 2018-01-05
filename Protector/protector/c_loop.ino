@@ -1,11 +1,24 @@
 //default function loop() keeps repeating
-void loop() {
+void loop() { 
+  //over the air transfer
+  if(ota == true){ 
+    //after the reboot, over the air transfer can be used for certain time
+    while (otaTransfer < otaTime) {
+      otaCurrent = millis();
+      if (otaCurrent - otaPrevious >= otaInterval) {
+        otaPrevious = otaCurrent;
+        otaTransfer++;
+      }
+      ArduinoOTA.handle();
+      yield();
+    }
+    //when over the air transfer ended, the ledBlink() function is called
+    ledBlink();
+    ota = false;
+  }
   //get pressed key
   keypressed = customKeypad.getKey();
-  warningMessage = false;
-  alarmMessage = false;
-  cancelMessage = false;
-  activateMessage = true;
+  printMessage = "activate";
   activeAlarm = false;
   check = true;
   change = true; 

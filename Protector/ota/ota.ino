@@ -1,31 +1,35 @@
-//default function setup() always called at the beginning
+#include <ESP8266WiFi.h>
+#include <ESP8266mDNS.h>
+#include <WiFiUdp.h>
+#include <ArduinoOTA.h>
+
+const char* ssid = "Feretovi";
+const char* password = "88888888";
+
+boolean ota = true;
+unsigned long otaPrevious = 0;
+unsigned long otaCurrent;
+const long otaInterval = 1000;
+int otaTransfer = 0;
+int otaTime = 15;
+
 void setup() {
-  // serial monitor inicialization
   Serial.begin(115200);
-  //EEPROM inicialization
-  EEPROM.begin(512);  
-  delay(10);
-  //eepromWrite();
-  eepromRead();
-  // keypad inicialization
-  customKeypad.begin();
-  //LCD display inicialization
-  lcd.begin();
-  pinMode(buzzer, OUTPUT);
-  pinMode(trigPin, OUTPUT);
-  pinMode(echoPin, INPUT);
-  pinMode(redLed, OUTPUT);
-  //WiFi manager
-  //192.168.4.1
-  WiFiManager wifiManager;
-  wifiManager.setConfigPortalTimeout(120);
-  wifiManager.autoConnect("AP-NAME", "AP-PASSWORD");
-  //Arduino OTA (Over the Air transfer)
+  pinMode(LED_BUILTIN, OUTPUT);
+  Serial.println("Booting");
+  WiFi.mode(WIFI_STA);
+  WiFi.begin(ssid, password);
+  while (WiFi.waitForConnectResult() != WL_CONNECTED) {
+    Serial.println("Connection Failed! Rebooting...");
+    delay(5000);
+    ESP.restart();
+  }
+
   // Port defaults to 8266
   // ArduinoOTA.setPort(8266);
 
   // Hostname defaults to esp8266-[ChipID]
-  ArduinoOTA.setHostname("protectorESP8266");
+  // ArduinoOTA.setHostname("myesp8266");
 
   // No authentication by default
   ArduinoOTA.setPassword("protector");
@@ -38,9 +42,10 @@ void setup() {
     String type;
     if (ArduinoOTA.getCommand() == U_FLASH)
       type = "sketch";
-    else
+    else // U_SPIFFS
       type = "filesystem";
 
+    // NOTE: if updating SPIFFS this would be the place to unmount SPIFFS using SPIFFS.end()
     Serial.println("Start updating " + type);
   });
   ArduinoOTA.onEnd([]() {
@@ -57,7 +62,23 @@ void setup() {
     else if (error == OTA_RECEIVE_ERROR) Serial.println("Receive Failed");
     else if (error == OTA_END_ERROR) Serial.println("End Failed");
   });
-  //OTA inicialization
   ArduinoOTA.begin();
   Serial.println("Ready");
+  Serial.print("IP address: ");
+  Serial.println(WiFi.localIP());
+}
+
+void loop() { 
+  if(ota == true){ 
+    while (otaTransfer < otaTime) {
+      otaCurrent = millis();
+      if (otaCurrent - otaPrevious >= otaInterval) {
+        otaPrevious = otaCurrent;
+        otaTransfer++;
+      }
+      ArduinoOTA.handle();
+      yield();
+    }
+    ota = false;
+  }
 }

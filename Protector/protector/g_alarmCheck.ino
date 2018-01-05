@@ -37,10 +37,7 @@ void alarmCheck() {
           message = 1;
         }
         active = false;
-        activateMessage = false;
-        alarmMessage = false;
-        cancelMessage = false;
-        warningMessage = true;
+        printMessage = "warning";
         deactivate = true;
         enterPassword();
         yield();

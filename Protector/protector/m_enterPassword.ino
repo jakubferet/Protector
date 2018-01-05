@@ -73,19 +73,19 @@ void enterPassword() {
         k = 9;
         tempPass = "";
         lcd.clear();
-        if (activateMessage == true) {
+        if (printMessage == "activate") {
           lcd.setCursor(1, 0);
           lcd.print("ACTIVATE ALARM");
         }
-        else if (warningMessage == true) {
+        else if (printMessage == "warning") {
           lcd.setCursor(4, 0);
           lcd.print("WARNING");
         }
-        else if (alarmMessage == true) {
+        else if (printMessage == "alarm") {
           lcd.setCursor(0, 0);
           lcd.print(" *** ALARM *** ");
         }
-        else if (cancelMessage == true) {
+        else if (printMessage == "cancel") {
           lcd.setCursor(5, 0);
           lcd.print("CANCEL");
         }
@@ -129,7 +129,7 @@ void enterPassword() {
           lcd.clear();
           lcd.setCursor(5, 0);
           lcd.print("WRONG!");
-          if (activateMessage == false && alarmMessage == false) {
+          if (printMessage != "activate" && printMessage != "alarm") {
             lcd.setCursor(0, 1);
             lcd.print("ATTEMPTS:");
             lcd.setCursor(10, 1);
@@ -141,19 +141,19 @@ void enterPassword() {
           }
           delay(2000);
           lcd.clear();
-          if (activateMessage == true) {
+          if (printMessage == "activate") {
             lcd.setCursor(1, 0);
             lcd.print("ACTIVATE ALARM");
           }
-          else if (warningMessage == true) {
+          else if (printMessage == "warning") {
             lcd.setCursor(4, 0);
             lcd.print("WARNING");
           }
-          else if (alarmMessage == true) {
+          else if (printMessage == "alarm") {
             lcd.setCursor(0, 0);
             lcd.print(" *** ALARM *** ");
           }
-          else if (cancelMessage == true) {
+          else if (printMessage == "cancel") {
             lcd.setCursor(5, 0);
             lcd.print("CANCEL");
           }
