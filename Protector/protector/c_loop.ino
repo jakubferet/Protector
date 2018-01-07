@@ -11,8 +11,8 @@ void loop() {
       }
       ArduinoOTA.handle();
       yield();
-    }
-    //when over the air transfer ended, the ledBlink() function is called
+    }//end of while
+    //when over the air transfer ended, the ledBlink() function is called and program can continue
     ledBlink();
     ota = false;
   }
