@@ -6,6 +6,7 @@ void setup() {
   EEPROM.begin(512);  
   delay(10);
   //eepromWrite();
+  //read password from EEPROM
   eepromRead();
   // keypad inicialization
   customKeypad.begin();

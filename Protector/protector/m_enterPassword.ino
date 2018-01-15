@@ -32,7 +32,7 @@ void enterPassword() {
           text = 0;
           activateAlarm();
       }
-      //id activate is false, call the deactivateAlarm() function
+      //if activate is false, call the deactivateAlarm() function
       else if(activate == "false" && deactive == true){
         alarm = "false";
         postValues();
